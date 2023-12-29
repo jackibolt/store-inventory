@@ -18,8 +18,7 @@ class Product(Base):
     date_updated = Column('Last Update', Date)
 
     def __repr__(self):
-        return f'''
-                \n{self.product_id}. {self.product_name} - ${self.product_price}
+        return f'''\n{self.product_id}. {self.product_name} - ${self.product_price/100}
                 \rQuantity: {self.product_quantity}
                 \rLast Update: {self.date_updated}
                 '''
