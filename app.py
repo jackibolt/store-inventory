@@ -82,33 +82,11 @@ def clean_quantity(quantity_str):
         return quantity_str
 
 
-# def add_csv():
-#     with open('inventory.csv') as csv_file:
-#         data = csv.reader(csv_file)
-#         next(data)
-#         for row in data:
-#             # print(row)
-#             new_product_name = row[0]
-#             item_in_inventory = session.query(Product).filter(Product.product_name==new_product_name).one_or_none()
-#             if item_in_inventory == None:
-#                 product_name = row[0]
-#                 product_price = clean_price(row[1])
-#                 product_quantity = clean_quantity(row[2])
-#                 date_updated = clean_date(row[3])
-
-#                 new_product = Product(product_name=product_name, product_price=product_price, product_quantity=product_quantity, date_updated=date_updated)
-#                 session.add(new_product)
-
-        
-#         session.commit()
-
-
 def add_csv():
     with open('inventory.csv') as csv_file:
         data = csv.reader(csv_file)
         next(data)
         for row in data:
-            # print(row)
             new_product_name = row[0]
             item_in_inventory = session.query(Product).filter(Product.product_name==new_product_name).one_or_none()
             product_name = row[0]
